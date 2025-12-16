@@ -9,12 +9,14 @@ body {
   --font-mont: 'Montserrat', sans-serif;
   --font-metro: 'Metropolis', sans-serif;
   --color-primary: #0096E9;
+  --color-primaryBlack: #1A1B1C;
+  --color-gray: #9C9C9C;
 }
 @layer base{
   h1{
     @apply font-metro
   }
-  p{
+  p,li{
     @apply font-mont
   }
 }
