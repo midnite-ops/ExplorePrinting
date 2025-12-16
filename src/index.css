@@ -2,19 +2,33 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  min-height: 100vh; 
-  overflow: hidden;
+
+}
+@theme {
+  --font-poppins: 'Poppins', sans-serif;
+  --font-mont: 'Montserrat', sans-serif;
+  --font-metro: 'Metropolis', sans-serif;
+  --color-primary: #0096E9;
 }
 @layer base{
+  h1{
+    @apply font-metro
+  }
   p{
-    @apply text-gray-700 text-base md:text-lg leading-relaxed font-semibold;
+    @apply font-mont
   }
 }
 @layer components {
   .btn {
     @apply  text-white font-bold py-3 px-14 rounded-full cursor-pointer;
+  }
+  .gray-text{
+    @apply text-gray-700 text-base md:text-lg leading-relaxed font-semibold;
+  }
+  .subtitle{
+    @apply lg:text-[22px] text-sm md:text-base font-mont;
+  }
+  .section-spacing{
+    @apply mx-25
   }
 }
