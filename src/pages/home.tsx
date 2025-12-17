@@ -13,6 +13,7 @@ import exploreWhite from '../assets/explore-white-logo.svg';
 import exBlack from '../assets/ex-black.svg';
 import man from '../assets/MAN .svg';
 import Footer from '../components/Footer';
+import Portfolio from '../components/Portfolio';
 
 export default function Home() {
     const navLinks = [
@@ -114,10 +115,14 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id='services'>
-                <div className='mb-12'>
-                    <h1 className='text-3xl font-semibold text-center'>Our Printing Services</h1>
+            <section className="section-spacing mt-[100px]">
+                <div className='header-centered'>
+                    <h1 className='font-poppins text-4xl xl:text-5xl font-medium'>Our Work Portfolio</h1>
+                    <p className='subtitle'>
+                        Explore our diverse range of printing projects and see the quality that sets us apart.
+                    </p>
                 </div>
+                 <Portfolio />
             </section>
         </main>
         <Footer />
