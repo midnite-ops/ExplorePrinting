@@ -31,7 +31,7 @@ body {
     @apply xl:text-[22px] lg:text-lg text-sm md:text-base font-mont;
   }
   .section-spacing{
-    @apply mx-25
+    @apply mx-25 mb-[150px]
   }
 
   .header-centered{
