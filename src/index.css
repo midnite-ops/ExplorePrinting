@@ -11,6 +11,15 @@ body {
   --color-primary: #0096E9;
   --color-primaryBlack: #1A1B1C;
   --color-gray: #9C9C9C;
+  @keyframes infinite-scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-50% - 20px));
+    }
+  }
+  --animate-infinite-scroll-left: infinite-scroll-left 10s linear infinite;
 }
 @layer base{
   h1{

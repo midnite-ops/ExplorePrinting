@@ -1,4 +1,5 @@
 import { useState } from "react"
+import explorewhite from '../assets/explore-white-logo.svg';
 export default function Portfolio() {
     const [activeDiv, setActiveDiv] = useState<string>('Projects')
     const divs = ['Projects', 'Merchandise', 'Billboards', 'Books', 'Others'];
@@ -34,8 +35,22 @@ export default function Portfolio() {
                 
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-8 px-4">
                     {activeDiv === 'Projects' && projectImgs.map((project, index) => (
-                        <div key={index} className="p-4">
-                            <img src={project} alt={`Project ${index + 1}`} className="w-full h-auto rounded-lg shadow-md" />
+                        <div key={index} className=" relative overflow-hidden group cursor-pointer">
+                            <img src={project} alt={`Project ${index + 1}`} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+
+
+                            {/* Overlay with title and description */}
+                            <div className="absolute inset-0  group-hover:bg-black/60 transition-colors duration-500 " />
+
+                            {/* Text with slide up effect */}
+                            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t">
+                                <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                <img src={explorewhite} alt="explore logo" className="mb-5"/>
+                                <p className="text-gray-300 text-base leading-relaxed">
+                                    Explore our diverse range of printing projects and see the quality that sets us apart.
+                                </p>
+                                </div>
+                            </div>
                         </div>
                     ))}
                     {activeDiv === 'Merchandise' && merchandiseImgs.map((merchandise, index) => (

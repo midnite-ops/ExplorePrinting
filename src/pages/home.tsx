@@ -140,7 +140,7 @@ export default function Home() {
                     </div>
                 </header>
 
-                <div className=' bg-primary px-28 text-white h-[550px]'>
+                <div className=' bg-primary px-28 text-white h-[560px]'>
                     <div className='flex flex-col justify-center'>
                         <HeroTicker/>
                         <div className='inline-flex gap-6 font-mont font-medium'>
@@ -156,9 +156,12 @@ export default function Home() {
                     <h1 className='text-3xl font-semibold text-center'>Trusted By</h1>
                 </div>
                 <div className='overflow-hidden flex gap-[50px]'>
-                    {brands.map(img => (
-                        <img src={img} alt="brand logo" />
-                    ))}
+                    <div className='flex animate-infinite-scroll-left'>
+                        {[...brands, ...brands].map((brand, index) => (
+                            <img src={brand} alt="brand logo" key={index} className='h-12 object-contain mx-10'/>
+                        ))}
+                    </div>
+                    
                 </div>
             </section>
 
@@ -197,7 +200,7 @@ export default function Home() {
 
             <section className='bg-[#FFCCCC] h-[1000px] py-16 flex jusify-center items-center flex-col gap-10 relative mb-[100px]'>
                 <h1 className='text-center text-3xl font-normal'>What we bring to the table</h1>
-                <div className='bg-white mx-25 h-full py-[90px] px-5'>
+                <div className='bg-white mx-25 h-full py-[90px] px-5 shadow-xl'>
                     <div className="grid grid-cols-3 gap-4 gap-y-10 gap-x-5">
                         {
                            brandFeatures.map((item, index) => (

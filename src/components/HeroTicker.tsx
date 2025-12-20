@@ -14,7 +14,6 @@ export default function HeroTicker() {
 			title: 'You want your brand to gain visibility through quality merch, isn’t it?',
 			desc: 'From T-shirts to mugs, billboards to merch — we help your brand stand out with bold, durable, and eye-catching prints that speak for you.',
 			img: tShirt,
-			width: '580px' // a specified width for the h1 tag for this particular item
 		},
 		{
 			title: 'What would you like to print today?',
