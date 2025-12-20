@@ -1,5 +1,4 @@
 import exploreLogo from '../assets/explore-logo.svg';
-import ex from '../assets/ex.svg';
 import cloud from '../assets/brands/cloud.svg';
 import victa from '../assets/brands/victa.svg';
 import aws from '../assets/brands/aws.svg';
@@ -20,7 +19,7 @@ import sarahPic from '../assets/Sarah.svg';
 import davidPic from '../assets/David.svg';
 import starRating from '../assets/star-rating.svg';
 import printingProcessImg from '../assets/printing-process.svg';
-import { title } from 'process';
+import HeroTicker from '../components/HeroTicker';
 
 export default function Home() {
 
@@ -141,23 +140,13 @@ export default function Home() {
                     </div>
                 </header>
 
-                <div className=' bg-primary px-28 text-white flex items-start justify-between py-11 pb-[87px]'>
-                    <div className='flex flex-col justify-center gap-[63px] flex-2'>
-                        <div>
-                            <h1 className='font-semibold text-[55px] w-[65%] leading-tight mb-[30px]'>
-                                Welcome to your reliable print partner
-                            </h1>
-                            <p className='subtitle w-[75%]'>
-                                We bring your ideas to life with precision printing, vibrant colors and unmatched. attention to detail on every material that matters. 
-                            </p>
-                        </div>
+                <div className=' bg-primary px-28 text-white h-[550px]'>
+                    <div className='flex flex-col justify-center'>
+                        <HeroTicker/>
                         <div className='inline-flex gap-6 font-mont font-medium'>
-                            <button className='py-2 text-primary bg-white rounded-[10px] w-[191px] text-xl cursor-pointer'>Get Quote</button>
-                            <button className='rounded-[10px] w-[191px] text-xl bg-transparent text-white  border-white border-3 cursor-pointer'>View our work</button>
+                            <button className='py-2 text-primary bg-white rounded-[10px] w-[191px] text-lg cursor-pointer'>Get Quote</button>
+                            <button className='rounded-[10px] w-[191px] text-lg bg-transparent text-white  border-white border-3 cursor-pointer'>View our work</button>
                         </div>
-                    </div>
-                    <div className='flex-1 mt-5'>
-                        <img src={ex} alt="explore mockup" className='h-full w-full'/>
                     </div>
                 </div>
             </section>
@@ -291,7 +280,7 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className='mb-5 mt-18'>
+                <div className='mb-5 mt-18 flex justify-center'>
                     <img src={printingProcessImg} alt="Our printing process" />
                 </div>
                 <div className='flex justify-between gap-5'>
