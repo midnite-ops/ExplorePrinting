@@ -140,10 +140,10 @@ export default function Home() {
                     </div>
                 </header>
 
-                <div className=' bg-primary px-28 text-white h-[560px]'>
+                <div className=' bg-primary px-28 text-white h-[600px] flex justify-center items-center'>
                     <div className='flex flex-col justify-center'>
                         <HeroTicker/>
-                        <div className='inline-flex gap-6 font-mont font-medium'>
+                        <div className=' flex gap-6 font-mont font-medium mt-15'>
                             <button className='py-2 text-primary bg-white rounded-[10px] w-[191px] text-lg cursor-pointer'>Get Quote</button>
                             <button className='rounded-[10px] w-[191px] text-lg bg-transparent text-white  border-white border-3 cursor-pointer'>View our work</button>
                         </div>
@@ -301,9 +301,6 @@ export default function Home() {
             <section className="section-spacing" id='portfolio'>
                 <div className='header-centered'>
                     <h1 className='font-poppins text-4xl xl:text-5xl font-medium'>Our Work Portfolio</h1>
-                    <p className='subtitle'>
-                        Explore our diverse range of printing projects and see the quality that sets us apart.
-                    </p>
                 </div>
                  <Portfolio />
             </section>

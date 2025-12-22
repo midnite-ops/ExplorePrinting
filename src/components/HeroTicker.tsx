@@ -37,8 +37,8 @@ export default function HeroTicker() {
 	}, []);
 	const [opacity, setOpacity] = useState(1);
   return (
-    <section className='flex w-full justify-start items-center gap-10 xl:gap-0 lg:flex-row flex-col'>	
-    	<div className='flex-1'>
+    <section className='flex w-full justify-start items-center gap-10 xl:gap-0 lg:flex-row flex-col h-[300px]'>	
+    	<div className='flex-1 '>
         	<h1 className={`font-normal text-[50px] leading-tight mb-[30px] transition-opacity ${currentIndex === 1 ? 'w-[580px]' : 'w-[450px]'} duration-500 ease-in-out`} style={{opacity: opacity}}>
 				{heroDisplay[currentIndex].title}
         	</h1>
