@@ -8,7 +8,7 @@ import mailIcon from '../assets/mail-icon.svg';
 import CTAbg from '../assets/portfolio/CTA-bg.svg';
 export default function Footer() {
   return (
-    <section>
+    <section >
         <div className='relative h-[500px] flex justify-center items-center text-white'>
             <img src={CTAbg} alt="a printing press background" className="absolute top-0 left-0 w-full h-full object-cover -z-10"/>
             <div className='w-[70%] flex justify-center flex-col items-center gap-8 text-center'>
@@ -27,7 +27,7 @@ export default function Footer() {
                 
             </div>
         </div>
-        <footer className="py-[50px] xl:px-[100px] bg-primaryBlack text-gray">
+        <footer id='contact' className="py-[50px] xl:px-[100px] bg-primaryBlack text-gray">
             <div className="container mx-auto ">
                 <div className="flex justify-between items-start border-b border-gray pb-14 mb-10 ">
                     <div className="text-gray w-[25%]">

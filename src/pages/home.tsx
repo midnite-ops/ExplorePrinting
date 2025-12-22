@@ -109,17 +109,17 @@ export default function Home() {
         
     ]
     const navLinks = [
-        { name: 'Home', href: '/' },
-        { name: 'About Us', href: '/about-us' },
-        { name: 'Services', href: '/services' },
-        { name: 'Process', href: '/process' },
-        { name: 'Contact', href: '/contact' },
+        { name: 'Home', href: '#Hero' },
+        { name: 'About Us', href: '#about-us' },
+        { name: 'Process', href: '#process' },
+        { name: 'Contact', href: '#contact' },
     ]
+
     const brands:string[] = [fidelity, century, tsa, gionee, citi, xpress, aws, cloud, victa,];
   return (
     <>
         <main>
-            <section id="Hero" className="my-11 mb-0 h-screen">
+            <section id="Hero" className="py-11 mb-0 h-screen">
                 <header className='flex justify-between items-center mb-10 section-spacing '>
                     <div>
                         <img src={exploreLogo} alt="explore logo" />
