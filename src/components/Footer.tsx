@@ -28,9 +28,19 @@ export default function Footer() {
             </div>
         </div>
         <footer id='contact' className="py-[50px] xl:px-[100px] bg-primaryBlack text-gray">
-            <div className="container mx-auto ">
-                <div className="flex justify-between items-start border-b border-gray pb-14 mb-10 ">
-                    <div className="text-gray w-[25%]">
+            <div className=" mx-auto px-4">
+                <div className="flex lg:flex-row gap-10 justify-between flex-col items-start border-b border-gray pb-14 mb-10">
+                    {/* Quick Links for Mobile, only shows on mobile */}
+                    <div className='lg:hidden'>
+                        <h2 className='text-white text-xl mb-6'>Quick Links</h2>
+                        <ul className='text-gray flex flex-col gap-5 font-mont'>
+                            <a href="#" className="hover:text-gray-300">About Us</a>
+                            <a href="#" className="hover:text-gray-300">Portfolio</a>
+                            <a href="#" className="hover:text-gray-300">FAQ</a>
+                            <a href="#" className="hover:text-gray-300">Contact Us</a>
+                        </ul>
+                    </div>
+                    <div className="text-gray w-[50%] lg:w-[25%] hidden lg:block">
                         <img src={explorewhite} alt="Explore Printing Logo" className='mb-6'/>
                         <p className="text-sm mt-2">
                             Your trusted partner for all printing needs. Quality, speed, and reliability in every project.
@@ -47,7 +57,7 @@ export default function Footer() {
                             </a>
                         </div>
                     </div>
-                    <div className=''>
+                    <div >
                         <h2 className='text-white text-xl mb-6'>Services</h2>
                         <ul className='flex flex-col gap-5 '>
                             <li>Merchandise Printing</li>
@@ -57,7 +67,7 @@ export default function Footer() {
                             <li>Custom Solutions</li>
                         </ul>
                     </div>
-                    <div className=''>
+                    <div className='hidden lg:block'>
                         <h2 className='text-white text-xl mb-6'>Quick Links</h2>
                         <ul className='text-gray flex flex-col gap-5 font-mont'>
                             <a href="#" className="hover:text-gray-300">About Us</a>
@@ -82,6 +92,25 @@ export default function Footer() {
                                 <p className='leading-7'>info@xploreprinting.com</p>
                             </div>
                         </ul>
+                    </div>
+
+                    {/* Mobile Footer Logo and Description */}
+                    <div className="text-gray w-[50%] lg:w-[25%] lg:hidden">
+                        <img src={explorewhite} alt="Explore Printing Logo" className='mb-6'/>
+                        <p className="text-sm mt-2">
+                            Your trusted partner for all printing needs. Quality, speed, and reliability in every project.
+                        </p>
+                        <div className='flex gap-5 mt-5'>
+                            <a href="">
+                                <img src={facebook} alt="a facebook link" />
+                            </a>
+                            <a href="">
+                                <img src={twitter} alt="a twitter link" />
+                            </a>
+                            <a href="">
+                                <img src={instagram} alt="an instagram logo embedded with a link" />
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className="mt-8 text-center text-[18px] font-light">

@@ -284,7 +284,7 @@ export default function Home() {
                 </div>
 
                 <div className='mb-5 mt-18 flex justify-center'>
-                    <img src={printingProcessImg} alt="Our printing process" />
+                    <img src={printingProcessImg} alt="Our printing process" className='w-full'/>
                 </div>
                 <div className='flex justify-between gap-5'>
                     {
