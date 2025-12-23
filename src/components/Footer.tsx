@@ -11,13 +11,13 @@ export default function Footer() {
     <section >
         <div className='relative h-[500px] flex justify-center items-center text-white'>
             <img src={CTAbg} alt="a printing press background" className="absolute top-0 left-0 w-full h-full object-cover -z-10"/>
-            <div className='w-[70%] flex justify-center flex-col items-center gap-8 text-center'>
+            <div className='w-full px-5 md:w-[70%] flex justify-center flex-col items-center gap-8 text-center'>
                 <h1 className='font-poppins text-4xl xl:text-5xl font-medium'>Ready to Bring Your Ideas to Life?</h1>
                 <p>
                     Let's Print! Join thousands of satisfied customers who trust PrintCraft for all their printing needs. Get your custom quote today and see why we're the preferred choice for quality printing.
                 </p>
-                <div>
-                    <button className="btn bg-primary text-white font-poppins text-[18px] px-6 py-2 rounded-md mr-8 hover:bg-primary-500 transition duration-300">
+                <div className='flex'>
+                    <button className="btn bg-primaryBlue text-white font-poppins md:text-[18px] px-6 py-2 rounded-md mr-8 hover:bg-primaryBlue-500 transition duration-300">
                         Request a Quote
                     </button>
                     <button className="btn bg-transparent text-white font-poppins text-[18px] px-6 py-2 rounded-md border border-white hover:bg-gray-800 transition duration-300">
@@ -89,7 +89,7 @@ export default function Footer() {
                             </div>
                             <div className='flex items-center gap-4'>
                                 <img src={mailIcon} alt="a mail icon" />
-                                <p className='leading-7'>info@xploreprinting.com</p>
+                                <p className='leading-7'>info@exploreprinting.com</p>
                             </div>
                         </ul>
                     </div>

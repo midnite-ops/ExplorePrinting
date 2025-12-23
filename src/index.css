@@ -11,7 +11,7 @@ html{
   --font-poppins: 'Poppins', sans-serif;
   --font-mont: 'Montserrat', sans-serif;
   --font-metro: 'Metropolis', sans-serif;
-  --color-primary: #0096E9;
+  --color-primaryBlue: #0096E9;
   --color-primaryBlack: #1A1B1C;
   --color-gray: #9C9C9C;
   @keyframes infinite-scroll-left {
@@ -26,7 +26,7 @@ html{
 }
 @layer base{
   h1{
-    @apply font-metro
+    @apply font-metro 
   }
   p,li{
     @apply font-mont
@@ -40,10 +40,10 @@ html{
     @apply text-gray-700 text-base md:text-lg leading-relaxed font-semibold;
   }
   .subtitle{
-    @apply xl:text-[22px] lg:text-lg text-sm md:text-base font-mont;
+    @apply xl:text-[22px] text-center lg:text-lg text-base font-mont;
   }
   .section-spacing{
-    @apply lg:mx-25 mx-5 mb-[150px]
+    @apply lg:mx-25 mx-5 mb-[100px] md:mb-[150px]
   }
 
   .header-centered{

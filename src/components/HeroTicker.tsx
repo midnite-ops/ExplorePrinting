@@ -37,18 +37,18 @@ export default function HeroTicker() {
 	}, []);
 	const [opacity, setOpacity] = useState(1);
   return (
-    <section className='flex w-full justify-start items-center gap-10 xl:gap-0 lg:flex-row flex-col h-[300px]'>	
-    	<div className='flex-1 '>
-        	<h1 className={`font-normal text-[50px] leading-tight mb-[30px] transition-opacity ${currentIndex === 1 ? 'w-[580px]' : 'w-[450px]'} duration-500 ease-in-out`} style={{opacity: opacity}}>
+    <section className='flex w-full justify-start items-center gap-10 xl:gap-0 md:flex-row flex-col-reverse h-[500px] lg:h-[300px] mt-10 md:mt-0'>	
+    	<div className='flex-1 flex flex-col w-full'>
+        	<h1 className={`font-bold text-2xl lg:text-[50px] text-center lg:text-start leading-tight mb-[30px] transition-opacity ${currentIndex === 1 ? 'lg:w-[580px]' : 'lg:w-[450px]'} duration-500 ease-in-out w-full`} style={{opacity: opacity}}>
 				{heroDisplay[currentIndex].title}
         	</h1>
-        	<p className='subtitle transition-opacity duration-500 ease-in-out' style={{opacity: opacity}}>
+        	<p className='subtitle transition-opacity duration-500 ease-in-out text-center lg:text-start' style={{opacity: opacity}}>
 				{heroDisplay[currentIndex].desc}
         	</p>
     	</div>
-		<div className='flex-1 mt-5 flex items-center justify-end relative'>
-			<img src={ex} alt="a placeholder for the image in the hero section" className='absolute -right-5'/>
-			<img src={heroDisplay[currentIndex].img} alt="explore mockup" className='transition-opacity duration-700 z-10 object-cover' style={{opacity: opacity}}/>
+		<div className='flex-1 mt-5 flex  items-center justify-center relative h-[300px] md:h-auto'>
+			<img src={ex} alt="a placeholder for the image in the hero section" className='absolute  w-[full]'/>
+			<img src={heroDisplay[currentIndex].img} alt="explore mockup" className='transition-opacity duration-700 z-10 object-cover h-[300px] w-[250px] md:h-auto md:w-auto ' style={{opacity: opacity}}/>
 		</div>
     </section>
   )

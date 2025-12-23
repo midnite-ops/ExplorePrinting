@@ -20,7 +20,12 @@ import davidPic from '../assets/David.svg';
 import starRating from '../assets/star-rating.svg';
 import printingProcessImg from '../assets/printing-process.svg';
 import HeroTicker from '../components/HeroTicker';
-
+import { SidebarTrigger } from '@/components/ui/sidebar';
+import { MenuIcon } from 'lucide-react';
+import processImg1 from '../assets/process/img-1.svg';
+import processImg2 from '../assets/process/img-2.svg';
+import processImg3 from '../assets/process/img-3.svg';
+import processImg4 from '../assets/process/img-4.svg';
 export default function Home() {
 
     const brandFeatures =  [
@@ -119,12 +124,12 @@ export default function Home() {
   return (
     <>
         <main>
-            <section id="Hero" className="py-11 mb-0 h-screen">
-                <header className='flex justify-between items-center mb-10 section-spacing '>
-                    <div>
-                        <img src={exploreLogo} alt="explore logo" />
+            <section id="Hero" className="lg:pt-11 pt-7 h-min mb-[100px]">
+                <header className='flex flex-wrap justify-between items-center mb-6 lg:mb-10 section-spacing '>
+                    <div className='flex-1'>
+                        <img src={exploreLogo} alt="explore logo" className=' w-25 lg:w-auto'/>
                     </div>
-                    <nav>
+                    <nav className='hidden items-center justify-between lg:flex flex-2'>
                         <ul className='flex gap-5'>
                             {navLinks.map((link) => (
                                 <li key={link.name} className="inline-block  font-mont text-[22px]">
@@ -132,26 +137,30 @@ export default function Home() {
                                 </li>
                             ))}
                         </ul>
+                        <div>
+                            <button className="btn bg-primaryBlue text-white font-poppins text-[18px] px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300">
+                                Get Quote
+                            </button>
+                        </div>
                     </nav>
-                    <div>
-                        <button className="btn bg-primary text-white font-poppins text-[18px] px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300">
-                            Get Quote
-                        </button>
-                    </div>
+                    <SidebarTrigger className='bg-transparent text-black  lg:hidden '>
+                        <MenuIcon className='h-4 w-4'/>
+                    </SidebarTrigger>
+                    
                 </header>
 
-                <div className=' bg-primary px-28 text-white h-[600px] flex justify-center items-center'>
+                <div className=' bg-primaryBlue md:px-28 text-white lg:h-[600px] flex justify-center items-center pb-10 px-5'>
                     <div className='flex flex-col justify-center'>
                         <HeroTicker/>
-                        <div className=' flex gap-6 font-mont font-medium mt-15'>
-                            <button className='py-2 text-primary bg-white rounded-[10px] w-[191px] text-lg cursor-pointer'>Get Quote</button>
-                            <button className='rounded-[10px] w-[191px] text-lg bg-transparent text-white  border-white border-3 cursor-pointer'>View our work</button>
+                        <div className=' flex gap-6 font-mont font-medium mt-15 w-full lg:justify-start justify-center'>
+                            <button className='py-2 text-primaryBlue bg-white rounded-[10px] w-[150px] lg:w-[191px text-lg cursor-pointer'>Get Quote</button>
+                            <button className='rounded-[10px] w-[150px] lg:w-[191px] text-lg bg-transparent text-white  border-white border-3 cursor-pointer px-1'>View our work</button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id='trusted-brands' className='mb-25'>
+            <section id='trusted-brands' className='mb-[100px] '>
                 <div className='mb-12'>
                     <h1 className='text-3xl font-semibold text-center'>Trusted By</h1>
                 </div>
@@ -166,8 +175,8 @@ export default function Home() {
             </section>
 
             <section id='about-us'>
-                <div className='bg-primary section-spacing text-white text-xl py-12 px-10 flex relative justify-between'>
-                    <div className='flex flex-col gap-10 w-[701px]'>
+                <div className='bg-primaryBlue mx-0 lg:mx-25 section-spacing text-white text-xl py-12 px-5 lg:px-10 flex relative justify-between flex-col lg:flex-row items-center'>
+                    <div className='flex flex-col gap-10 lg:w-[701px]'>
                         <img src={exploreWhite} alt="explore logo" className='w-[150px]'/>
                         <p>
                             Explore Printing & Brand Communication is a growing print-tech startup dedicated to transforming how brands communicate through creative printing and experiential merchandise.
@@ -190,22 +199,22 @@ export default function Home() {
                             
                         </p>
                     </div>
-                    <div className='self-end mb-[200px] relative'>
+                    <div className='self-end mb-[200px] lg:block hidden'>
                         <img src={exBlack} alt="explore acronym logo"/>
                     </div>
-                    <img src={man} alt="a picture of a man" className='absolute bottom-0 right-0 '/>
+                    <img src={man} alt="a picture of a man" className='lg:absolute bottom-0 right-0 w-[200px] lg:w-auto -mb-12 md:mb-0 mt-5'/>
                     
                 </div>
             </section>
 
-            <section className='bg-[#FFCCCC] h-[1000px] py-16 flex jusify-center items-center flex-col gap-10 relative mb-[100px]'>
-                <h1 className='text-center text-3xl font-normal'>What we bring to the table</h1>
-                <div className='bg-white mx-25 h-full py-[90px] px-5 shadow-xl'>
-                    <div className="grid grid-cols-3 gap-4 gap-y-10 gap-x-5">
+            <section className='bg-[#FFCCCC] px-5 lg:px-24 py-16 pb-5 flex jusify-center items-center flex-col gap-10 relative mb-[100px] overflow-hidden'>
+                <h1 className='text-center text-3xl font-normal z-20'>What we bring to the table</h1>
+                <div className='bg-white py-8 lg:py-[90px] px-5 shadow-x '>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-10 gap-x-5 z-20">
                         {
                            brandFeatures.map((item, index) => (
                             index === 2 ? (
-                                <div key={index} className="p-4 bg-transparent border-0 shadow-none">
+                                <div key={index} className="p-4 bg-transparent border-0 shadow-none hidden lg:block">
                                     {/* Empty space */}
                                 </div>
                             ) : (                               
@@ -219,24 +228,22 @@ export default function Home() {
 
                         {/* Empty space */}
                        
-                        <div className='absolute -top-3 right-25'>
-                            <img src={bag} alt="bag" />
+                        <div className='absolute -top-1.5  md:-top-3 -right-25 md:right-25 z-1'>
+                            <img src={bag} alt="bag"className='w-[200px] lg:w-full' />
                         </div>
                     </div>
-
-
                 </div>
             </section>
 
 
             <section className='section-spacing flex flex-col items-center justify-center' id='clients'>
-                <div className='w-[60%]'>
+                <div className='md:w-[60%] w-full'>
                     <h1 className='font-poppins text-4xl xl:text-5xl font-medium text-center'>What Our Clients Say</h1>
                     <p className='text-center lg:text-lg text-sm md:text-base mt-4 font-poppins'>
                         Don't just take our word for it - hear from satisfied customers across industries.
                     </p>
                 </div>
-                <div className='flex gap-5'>
+                <div className='flex gap-5 flex-wrap lg:flex-nowrap'>
                     {reviews.map((review, index) => (
                         <div key={index} className='bg-gray-100 p-8 mt-10 rounded-lg shadow-md'>
                             <div className='flex gap-5 mb-8'>
@@ -250,15 +257,14 @@ export default function Home() {
                             </div>
                             <img src={starRating} alt="star ratings image" className='mb-5'/>
                             <p className=' text-gray-800 mb-6'>{review.desc}</p>
-                           
                         </div>
                     ))}
                 </div>
 
-                <div className='w-[70%] mt-13 flex justify-center gap-10'>
+                <div className='w-full lg:w-[70%] mt-13 justify-center gap-10 hidden lg:flex'>
                     <div className='flex flex-col items-center justify-center gap-2'>
-                        <h1 className='font-semibold text-4xl'>500+</h1>
-                        <p className='font-poppins text-xl text-center'>Happy Clients</p>
+                        <h1 className='font-semibold lg:text-4xl text-2xl'>500+</h1>
+                        <p className='font-poppins text-sm lg:text-xl text-center'>Happy Clients</p>
                     </div>
                     <div className='flex flex-col items-center justify-center gap-2'>
                         <h1 className='font-semibold text-4xl'>10k+</h1>
@@ -282,25 +288,33 @@ export default function Home() {
                         From concept to delivery, we make printing easy and hassle-free.
                     </p>
                 </div>
+                <div className='flex lg:flex-col mt-18'>
+                    <div className='mb-5 flex flex-1 justify-center'>
+                        <img src={printingProcessImg} alt="Our printing process" className='w-full h-full hidden lg:block'/>
+                        <div className='lg:hidden flex justify-around flex-col pr-5  border-r-8 border-primaryBlue h-full'>
+                            {[processImg1,processImg2,processImg3,processImg4].map((img) => (
+                                <img src={img} className='w-20'/>
+                            ))}
+                        </div>
+                    </div>
+                    <div className='flex flex-col lg:flex-row flex-1 lg:justify-between justify-center gap-5'>
+                        {
+                            printingProcess.map((step, index) => (
+                                <div key={index} className='flex flex-col items-start lg:items-center justify-center gap-5 mb-8'>
+                                    <h2 className='text-xl font-semibold'>{step.title}</h2>
+                                    <p className='lg:text-center'>{step.desc}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
 
-                <div className='mb-5 mt-18 flex justify-center'>
-                    <img src={printingProcessImg} alt="Our printing process" className='w-full'/>
-                </div>
-                <div className='flex justify-between gap-5'>
-                    {
-                        printingProcess.map((step, index) => (
-                            <div key={index} className='flex flex-col items-center justify-center gap-5 mb-8'>
-                                <h2 className='text-xl font-semibold'>{step.title}</h2>
-                                <p className='text-center'>{step.desc}</p>
-                            </div>
-                        ))
-                    }
-                </div>
+                
             </section>
 
             <section className="section-spacing" id='portfolio'>
                 <div className='header-centered'>
-                    <h1 className='font-poppins text-4xl xl:text-5xl font-medium'>Our Work Portfolio</h1>
+                    <h1 className='font-poppins text-center text-4xl xl:text-5xl font-medium'>Our Work Portfolio</h1>
                 </div>
                  <Portfolio />
             </section>
