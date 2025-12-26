@@ -26,14 +26,21 @@ import processImg1 from '../assets/process/img-1.svg';
 import processImg2 from '../assets/process/img-2.svg';
 import processImg3 from '../assets/process/img-3.svg';
 import processImg4 from '../assets/process/img-4.svg';
+import eye from '../assets/table/eye.svg';
+import faceCap from '../assets/table/face-cap.svg';
+import printer1 from '../assets/table/printer-1.svg';
+import printer2 from '../assets/table/printer-2.svg';
+import flex from '../assets/table/flex.svg';
 export default function Home() {
 
     const brandFeatures =  [
         {
             title: 'Brand Identity', 
             desc: [
-                    'We create distinctive brand identities that capture your essence and communicate your story with clarity.', 'From logo design and color systems to complete visual guidelines, we ensure your brand stands out, stays consistent, and connects emotionally with your audience.'
-                ]
+                'We create distinctive brand identities that capture your essence and communicate your story with clarity.', 'From logo design and color systems to complete visual guidelines, we ensure your brand stands out, stays consistent, and connects emotionally with your audience.'
+            ],
+            img: eye
+
         },
         {
             title: 'Brand Merchandise',
@@ -41,7 +48,8 @@ export default function Home() {
                 'We help brands stay visible beyond the billboard. At Explore, we source high-quality products and transform them into walking brand experiences through creative printing and customization.',
 
                 'From everyday essentials to premium keepsakes, our merchandise keeps your brand in motion — because when people carry them, they carry your brand too.'
-            ]
+            ],
+            img: faceCap
         },
         {
             title: '',
@@ -53,7 +61,8 @@ export default function Home() {
                 'We produce high-quality digital banners for retail marketing, especially for SMEs and fintech brands looking to promote their products and services through their agents.',
 
                 'We also create banners for advertising agencies, billboard campaigns, churches, and NGOs — delivering prints that command attention and drive visibility.'
-            ]
+            ],
+            img: printer1
         },
         {
             title: 'Rollup Stands/PopUps',
@@ -61,7 +70,8 @@ export default function Home() {
                 'We produce high-quality roll-up stands and feather banners designed to elevate your marketing presence.',
 
                 'Available in a variety of sizes and styles from slim-base to flat-base designs our banners are built to suit your brand’s unique needs and make your message stand tall anywhere.'
-            ]
+            ],
+            img: flex
         },
         {
             title: 'General Printing',
@@ -69,7 +79,8 @@ export default function Home() {
                 'We’re your go-to destination for premium offset printing. Using our state-of-the-art Speedmaster press, we deliver exceptional quality for all your stationery and paper-based needs — from paper bags, business cards, and letterheads to business profiles, gift boxes, and more.',
 
                 'Whatever your print project, we bring precision, color accuracy, and class to every detail.'
-            ]
+            ],
+            img: printer2
         }
 
     ]
@@ -218,7 +229,8 @@ export default function Home() {
                                     {/* Empty space */}
                                 </div>
                             ) : (                               
-                                <div key={index} className="p-4 border border-[#FF400A] rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                                <div key={index} className="p-4 border border-[#FF400A] rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+                                    <img src={item.img} alt={item.title} className='absolute -top-7 right-10 w-[60px] h-[60px] md:w-auto md:h-auto z-10 bg-white'/>
                                     <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
                                     <p className="text-gray-700 text-sm mb-5">{item.desc[0]}</p>
                                     <p className="text-gray-700 text-sm">{item.desc[1]}</p>
@@ -281,6 +293,13 @@ export default function Home() {
                 </div>
             </section>
 
+            <section className="section-spacing" id='portfolio'>
+                <div className='header-centered'>
+                    <h1 className='font-poppins text-center text-4xl xl:text-5xl font-medium'>Our Work Portfolio</h1>
+                </div>
+                 <Portfolio />
+            </section>
+
             <section id='process' className='section-spacing'>
                 <div className='header-centered'>
                     <h1 className='font-poppins text-4xl xl:text-5xl font-medium text-center'>Our Simple Process</h1>
@@ -310,13 +329,6 @@ export default function Home() {
                 </div>
 
                 
-            </section>
-
-            <section className="section-spacing" id='portfolio'>
-                <div className='header-centered'>
-                    <h1 className='font-poppins text-center text-4xl xl:text-5xl font-medium'>Our Work Portfolio</h1>
-                </div>
-                 <Portfolio />
             </section>
         </main>
         <Footer />
