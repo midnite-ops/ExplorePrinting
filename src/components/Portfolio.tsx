@@ -1,97 +1,108 @@
-import { useState } from "react"
-import explorewhite from '../assets/explore-white-logo.svg';
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
+import { ImageGrid } from "./ImageGrid";
+import { AnimatePresence, motion } from "framer-motion";
+
+type ImageModule = { default: string };
+
 export default function Portfolio() {
-    const [activeDiv, setActiveDiv] = useState<string>('Merchandise')
-    const divs = ['Merchandise', 'Billboards', 'Recent Jobs'];
+  const [activeDiv, setActiveDiv] = useState("Merchandise");
+  const [activeImage, setActiveImage] = useState<string | null>(null);
 
-    // Dynamically import all images from the portfolio folders
-    const imageModules = import.meta.glob('../assets/portfolio/**/*.{png,jpg,jpeg,webp,svg}', { eager: true });
-    type ImageModule = { default: string };
+  const divs = ["Merchandise", "Billboards", "Recent Jobs"];
 
-    // Function to filter and return images based on folder
-    function loadImages(folder: string): string[] {
+  // Load images dynamically
+  const imageModules = import.meta.glob(
+    "../assets/portfolio/**/*.{png,jpg,jpeg,webp,svg}",
+    { eager: true }
+  );
+
+  function loadImages(folder: string): string[] {
     return Object.entries(imageModules)
-        .filter(([path]) => path.includes(`/portfolio/${folder}/`))
-        .map(([, module]) => (module as ImageModule).default);
-    }
-    const merchandiseImgs = loadImages('merchandise');
-    const billboardImgs = loadImages('billboards');
-    const othersImgs = loadImages('recent-jobs');
+      .filter(([path]) => path.includes(`/portfolio/${folder}/`))
+      .map(([, module]) => (module as ImageModule).default);
+  }
 
-    
-    return (
-        <section className="mt-13">
-            <div className="flex flex-col justify-center gap-5">
-                <div className="flex gap-5 justify-center w-full flex-wrap">
-                    {divs.map((div) => (
-                        <div className={`bg-[#E3F5FF] py-2 px-2 md:px-10 font-bold rounded-[10px]  xl:text-lg text-[16px] cursor-pointer ${activeDiv === div ? 'bg-primaryBlue text-white' : ''}`} onClick={() => setActiveDiv(div)}>
-                            {div}
-                        </div>
-                    ))}
-                </div>
-                
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8 px-4">
-                    {activeDiv === 'Merchandise' && merchandiseImgs.map((merchandise, index) => (
-                        <div key={index} className=" relative overflow-hidden group cursor-pointer">
-                            <img src={merchandise} alt={`Project ${index + 1}`} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 border border-black rounded-md" />
+  const imagesMap: Record<string, string[]> = {
+    Merchandise: loadImages("merchandise"),
+    Billboards: loadImages("billboards"),
+    "Recent Jobs": loadImages("recent-jobs"),
+  };
 
+  // Lock scroll when image is open
+  useEffect(() => {
+    document.body.style.overflow = activeImage ? "hidden" : "";
+  }, [activeImage]);
 
-                            {/* Overlay with title and description */}
-                            <div className="absolute inset-0  group-hover:bg-black/60 transition-colors duration-500 rounded-md" />
+  // Escape key close
+  useEffect(() => {
+    const esc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveImage(null);
+    };
+    window.addEventListener("keydown", esc);
+    return () => window.removeEventListener("keydown", esc);
+  }, []);
 
-                            {/* Text with slide up effect */}
-                            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t">
-                                <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                <img src={explorewhite} alt="explore logo" className="mb-5"/>
-                                <p className="text-gray-300 text-base leading-relaxed">
-                                    Explore our diverse range of printing projects and see the quality that sets us apart.
-                                </p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                    {activeDiv === 'Billboards' && billboardImgs.map((billboard, index) => (
-                        <div key={index} className=" relative overflow-hidden group cursor-pointer">
-                            <img src={billboard} alt={`Project ${index + 1}`} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 border border-black rounded-md" />
+  return (
+    <section className="mt-13">
+      <div className="flex flex-col gap-5">
 
+        {/* Tabs */}
+        <div className="flex gap-5 justify-center flex-wrap">
+          {divs.map((div) => (
+            <button
+              key={div}
+              onClick={() => setActiveDiv(div)}
+              className={`py-2 px-4 md:px-10 rounded-[10px] font-bold text-[16px] xl:text-lg transition
+                ${activeDiv === div ? "bg-primaryBlue text-white" : "bg-[#E3F5FF]"}`}
+            >
+              {div}
+            </button>
+          ))}
+        </div>
 
-                            {/* Overlay with title and description */}
-                            <div className="absolute inset-0  group-hover:bg-black/60 transition-colors duration-500 rounded-md" />
+        {/* Grid */}
+        <ImageGrid
+          images={imagesMap[activeDiv]}
+          onImageClick={setActiveImage}
+        />
+      </div>
 
-                            {/* Text with slide up effect */}
-                            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t">
-                                <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                <img src={explorewhite} alt="explore logo" className="mb-5"/>
-                                <p className="text-gray-300 text-base leading-relaxed">
-                                    Explore our diverse range of printing projects and see the quality that sets us apart.
-                                </p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                    
-                    {activeDiv === 'Recent Jobs' && othersImgs.map((other, index) => (
-                        <div key={index} className=" relative overflow-hidden group cursor-pointer">
-                            <img src={other} alt={`Project ${index + 1}`} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105  rounded-md" />
+      {/* Facebook-style viewer */}
+      <AnimatePresence>
+        {activeImage && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/90"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveImage(null)}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setActiveImage(null)}
+              className="absolute top-4 right-4 z-60 text-white p-2 rounded-full 
+                        hover:bg-white/10 transition focus:outline-none"
+            >
+              <X className="w-6 h-6 md:w-7 md:h-7" />
+            </button>
 
-
-                            {/* Overlay with title and description */}
-                            <div className="absolute inset-0  group-hover:bg-black/60 transition-colors duration-500 rounded-md" />
-
-                            {/* Text with slide up effect */}
-                            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t">
-                                <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                <img src={explorewhite} alt="explore logo" className="mb-5"/>
-                                <p className="text-gray-300 text-base leading-relaxed">
-                                    Explore our diverse range of printing projects and see the quality that sets us apart.
-                                </p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+            {/* Image */}
+            <div className="w-full h-full flex items-center justify-center">
+              <motion.img
+                src={activeImage}
+                className="max-w-[90vw] max-h-[90vh] object-contain"
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.95 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                onClick={(e) => e.stopPropagation()}
+              />
             </div>
-            
-        </section>
-    )
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </section>
+  );
 }
