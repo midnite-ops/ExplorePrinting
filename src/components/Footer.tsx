@@ -102,7 +102,7 @@ export default function Footer() {
                             </div>
                             <div className='flex items-center gap-4'>
                                 <img src={mailIcon} alt="a mail icon" />
-                                <p className='leading-7'>info@exploreprinting.com</p>
+                                <p className='leading-7'>exploreprintingafrica@gmail.com</p>
                             </div>
                         </ul>
                     </div>
