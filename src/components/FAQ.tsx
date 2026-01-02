@@ -1,11 +1,11 @@
 import { Accordion,AccordionContent, AccordionItem,AccordionTrigger } from "@/components/ui/accordion"
-function FAQ(){
+function Faq(){
     const faq = ['How do I place an order with your printing service?', 'What if I don’t have a design ready?',
  'How long does printing take?', 'How do you ensure quality and accuracy?', 'What level of print quality should I expect from your service?', 'What happens if there’s an error or issue with my order?']
     return(
         
         <section id="FAQ" className="flex justify-center section-spacing  space-y-20 px-2">
-            
+
             <Accordion
             type="single"
             collapsible
@@ -34,4 +34,4 @@ function FAQ(){
         
     )
 }
-export default FAQ
+export default Faq
