@@ -5,6 +5,7 @@ function FAQ(){
     return(
         
         <section id="FAQ" className="flex justify-center section-spacing  space-y-20 px-2">
+            
             <Accordion
             type="single"
             collapsible
