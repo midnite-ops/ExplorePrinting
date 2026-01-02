@@ -31,6 +31,7 @@ import faceCap from '../assets/table/face-cap.svg';
 import printer1 from '../assets/table/printer-1.svg';
 import printer2 from '../assets/table/printer-2.svg';
 import flex from '../assets/table/flex.svg';
+import FAQ from '@/components/Faq';
 export default function Home() {
 
     const brandFeatures =  [
@@ -326,9 +327,10 @@ export default function Home() {
                         }
                     </div>
                 </div>
-
                 
             </section>
+
+            <FAQ />
         </main>
         <Footer />
     </>
