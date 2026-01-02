@@ -16,7 +16,7 @@ export function ImageGrid({ images, onImageClick }: Props) {
           <img
             src={img}
             alt={`Project ${index + 1}`}
-            className="w-full h-full object-cover border border-black rounded-md
+            className="w-full h-full object-cover  rounded-md
               transition-transform duration-700 ease-out group-hover:scale-105"
           />
 

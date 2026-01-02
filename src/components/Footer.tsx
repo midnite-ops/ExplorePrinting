@@ -17,12 +17,17 @@ export default function Footer() {
                     Let's Print! Join thousands of satisfied customers who trust PrintCraft for all their printing needs. Get your custom quote today and see why we're the preferred choice for quality printing.
                 </p>
                 <div className='flex'>
-                    <button className="btn bg-primaryBlue text-white font-poppins md:text-[18px] px-6 py-2 rounded-md mr-8 hover:bg-primaryBlue-500 transition duration-300">
-                        Request a Quote
-                    </button>
-                    <button className="btn bg-transparent text-white font-poppins text-[18px] px-6 py-2 rounded-md border border-white hover:bg-gray-800 transition duration-300">
-                        Call us now
-                    </button>
+                    <a href="https://wa.me/2348163137546" target='_blank'>
+                        <button className="btn bg-primaryBlue text-white font-poppins md:text-[18px] px-6 py-2 rounded-md mr-8 hover:bg-primaryBlue-500 transition duration-300">
+                            Request a Quote
+                        </button>
+                    </a>
+                    <a href="#footer">
+                        <button className="btn bg-transparent text-white font-poppins text-[18px] px-6 py-2 rounded-md border border-white hover:bg-gray-800 transition duration-300">
+                            Call us now
+                        </button>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -81,11 +86,19 @@ export default function Footer() {
                         <ul className='flex flex-col gap-5 font-mont'>
                             <div className='flex items-center gap-4'>
                                 <img src={locationIcon} alt="a location icon" />
-                                <p className='leading-7'>123, George Street Shomulu, Lagos</p>
+                                <div>
+                                    <p className='leading-7 mb-3'>Elephant house 214 broad Street, Lagos Island.</p>
+                                    <p className='leading-7'>Print office 3 Akemfenwa Street, Ogba.</p>
+                                </div>
+                                
                             </div>
                             <div className='flex items-center gap-4'>
                                 <img src={phoneIcon} alt="a phone icon" />
-                                <p className='leading-7'>+234 123 456 78</p>
+                                <div>
+                                    <p className='leading-7'>+234 8163137546</p>
+                                    <p className='leading-7'>+234 8106854809</p>
+                                </div>
+                                
                             </div>
                             <div className='flex items-center gap-4'>
                                 <img src={mailIcon} alt="a mail icon" />

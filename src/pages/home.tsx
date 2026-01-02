@@ -150,9 +150,12 @@ export default function Home() {
                             ))}
                         </ul>
                         <div>
-                            <button className="btn bg-primaryBlue text-white font-poppins text-[18px] px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300">
-                                Get Quote
-                            </button>
+                            <a href="https://wa.me/2348163137546" target='_blank'>
+                                <button className="btn bg-primaryBlue text-white font-poppins text-[18px] px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300">
+                                    Get Quote
+                                </button>
+                            </a>
+                            
                         </div>
                     </nav>
                     <SidebarTrigger className='bg-transparent text-black  lg:hidden '>
@@ -165,8 +168,14 @@ export default function Home() {
                     <div className='flex flex-col justify-center'>
                         <HeroTicker/>
                         <div className=' flex gap-6 font-mont font-medium mt-15 w-full lg:justify-start justify-center'>
-                            <button className='py-2 text-primaryBlue bg-white rounded-[10px] w-[150px] lg:w-[191px text-lg cursor-pointer'>Get Quote</button>
-                            <button className='rounded-[10px] w-[150px] lg:w-[191px] text-lg bg-transparent text-white  border-white border-3 cursor-pointer px-1'>View our work</button>
+                            <a href="https://wa.me/2348163137546" target='_blank'>
+                                <button className='py-2 text-primaryBlue bg-white rounded-[10px] w-[150px] lg:w-[191px text-lg cursor-pointer'>Get Quote</button>
+                            </a>
+                            
+                            <a href="#portfolio" className='rounded-[10px] w-[160px] lg:w-[191px] text-lg bg-transparent text-white  border-white border-3 cursor-pointer px-1 flex items-center justify-center'>
+                                View our Work
+                            </a>
+                            
                         </div>
                     </div>
                 </div>
