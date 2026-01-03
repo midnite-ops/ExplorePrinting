@@ -22,7 +22,7 @@ export default function Footer() {
                             Request a Quote
                         </button>
                     </a>
-                    <a href="#footer">
+                    <a href="tel:+234 8106854809">
                         <button className="btn bg-transparent text-white font-poppins text-[18px] px-6 py-2 rounded-md border border-white hover:bg-gray-800 transition duration-300">
                             Call us now
                         </button>

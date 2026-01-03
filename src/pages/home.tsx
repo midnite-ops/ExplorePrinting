@@ -222,7 +222,7 @@ export default function Home() {
                             
                         </p>
                     </div>
-                    <div className='self-end mb-[200px] lg:block hidden'>
+                    <div className='self-end mb-[200px] hidden lg:block'>
                         <img src={exBlack} alt="explore acronym logo"/>
                     </div>
                     <img src={man} alt="a picture of a man" className='lg:absolute bottom-0 right-0 w-[200px] lg:w-auto -mb-12 md:mb-0 mt-5'/>
@@ -341,33 +341,34 @@ export default function Home() {
                 
             </section>
 
-            <section id="FAQ" className="flex justify-center section-spacing  space-y-20 px-2">
-
-            <Accordion
-            type="single"
-            collapsible
-            className="w-full  flex flex-col gap-7.5 justify-center "
-            defaultValue="">
-                {faq.map((item, index) => (
-                    <AccordionItem key={index} value={`item ${index}`} className='py-4 px-5 border-none bg-[#F4F4F4] rounded-xl'>
-                        <AccordionTrigger className='bg-transparent hover:no-underline'>{item}</AccordionTrigger>
-                        <AccordionContent>
-                            <div className="flex flex-col gap-4 mt-5 flex-start">
-                                <p className="text-start">
-                                    Our flagship product combines cutting-edge technology with sleek
-                                    design. Built with premium materials, it offers unparalleled
-                                    performance and reliability.
-                                </p>
-                                <p className="text-start">
-                                    Key features include advanced processing capabilities, and an
-                                    intuitive user interface designed for both beginners and experts.
-                                </p>
-                            </div>
-                        </AccordionContent>
-                    </AccordionItem>  
-                ))}
-            </Accordion>
-        </section>
+            <section id="FAQ" className="flex  flex-col justify-center section-spacing  space-y-20 px-2">
+            
+                <h1 className='text-center text-4xl xl:text-5xl'>FAQ</h1>
+                <Accordion
+                type="single"
+                collapsible
+                className="w-full  flex flex-col gap-7.5 justify-center "
+                defaultValue="">
+                    {faq.map((item, index) => (
+                        <AccordionItem key={index} value={`item ${index}`} className='py-4 px-5 border-none bg-[#F4F4F4] rounded-xl'>
+                            <AccordionTrigger className='bg-transparent hover:no-underline'>{item}</AccordionTrigger>
+                            <AccordionContent>
+                                <div className="flex flex-col gap-4 mt-5 flex-start">
+                                    <p className="text-start">
+                                        Our flagship product combines cutting-edge technology with sleek
+                                        design. Built with premium materials, it offers unparalleled
+                                        performance and reliability.
+                                    </p>
+                                    <p className="text-start">
+                                        Key features include advanced processing capabilities, and an
+                                        intuitive user interface designed for both beginners and experts.
+                                    </p>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>  
+                    ))}
+                </Accordion>
+            </section>
         </main>
         <Footer />
     </>
