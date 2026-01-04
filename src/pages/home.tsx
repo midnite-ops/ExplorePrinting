@@ -33,6 +33,7 @@ import printer1 from '../assets/table/printer-1.svg';
 import printer2 from '../assets/table/printer-2.svg';
 import flex from '../assets/table/flex.svg';
 import Counter from '@/hooks/counter';
+import { Description } from '@radix-ui/react-dialog';
 export default function Home() {
 
     const brandFeatures =  [
@@ -86,8 +87,27 @@ export default function Home() {
         }
 
     ]
-    const faq = ['How do I place an order with your printing service?', 'What if I don’t have a design ready?',
-    'How long does printing take?', 'How do you ensure quality and accuracy?', 'What level of print quality should I expect from your service?', 'What happens if there’s an error or issue with my order?']
+    const faq = [
+        {
+            title:'How do I place an order with your printing service?', 
+            description: 'Placing an order is simple and stress-free. You can reach us via WhatsApp, phone call, or email. Once you share your design (or request design support), we confirm specifications, pricing, and timelines before production begins.'}, 
+        {
+            title:'What if I don’t have a design ready?', 
+            description: 'No problem at all. Our in-house design team can help you create or refine your design to ensure it prints perfectly. We focus on clarity, color accuracy, and print-ready files—so you get the best final result.'},
+        {
+            title:'How long does printing take?', 
+            description:'Turnaround time depends on the job type and quantity, but we always communicate timelines upfront. Most standard print jobs are completed within 24–72 hours, and urgent jobs can be handled on request.'}, 
+        {
+            title:'How do you ensure quality and accuracy?', 
+            description: 'We carefully review every job before printing—checking size, colors, spelling, and finishing. Proofs are shared when necessary, and we only proceed after confirmation. Our goal is to deliver exactly what you expect, without surprises.'}, 
+        {
+            title:'What level of print quality should I expect from your service?', 
+            description: 'You can expect sharp prints, accurate colors, clean finishing, and durable materials. We use professional-grade machines and materials, and every job goes through a quality check before delivery to ensure it meets our standards and your expectations.'}, 
+        {
+            title: 'What happens if there’s an error or issue with my order?', 
+            description: 'If any issue arises from our end, we take responsibility and resolve it promptly. Customer satisfaction is important to us, so we work quickly to correct mistakes and ensure you’re happy with the final output.'
+        }
+    ]
     const reviews = [
         {
             name: 'Micheal Chan',
@@ -199,7 +219,7 @@ export default function Home() {
             </section>
 
             <section id='about-us'>
-                <div className='bg-primaryBlue mx-0 lg:mx-25 section-spacing text-white text-xl py-12 px-5 lg:px-10 flex relative justify-between flex-col lg:flex-row items-center h-[1500px] md:h-auto'>
+                <div className='bg-primaryBlue mx-0 lg:mx-25 section-spacing text-white text-xl py-12 px-5 lg:px-10 flex relative justify-between flex-col lg:flex-row items-center h-[1600px] md:h-auto'>
                     <div className='flex flex-col gap-10 lg:w-[701px]'>
                         <img src={exploreWhite} alt="explore logo" className='w-[150px]'/>
                         <p>
@@ -223,7 +243,7 @@ export default function Home() {
                             
                         </p>
                     </div>
-                    <div className='self-end flex justify-center items-center w-full h-full md:mb-[200px]  md:w-auto'>
+                    <div className='self-end flex justify-center items-end w-full h-full md:mb-[200px]  md:w-auto'>
                         <img src={exBlack} alt="explore acronym logo" className='w-[192px] md:w-auto'/>
                     </div>
                     <img src={man} alt="a picture of a man" className='absolute bottom-0 right-20 md:right-0 w-[200px] lg:w-auto md:mb-0 md:mt-5' loading='lazy'/>
@@ -365,18 +385,10 @@ export default function Home() {
                 defaultValue="">
                     {faq.map((item, index) => (
                         <AccordionItem key={index} value={`item ${index}`} className='py-4 px-5 border-none bg-[#F4F4F4] rounded-xl'>
-                            <AccordionTrigger className='bg-transparent hover:no-underline'>{item}</AccordionTrigger>
+                            <AccordionTrigger className='bg-transparent hover:no-underline'>{item.title}</AccordionTrigger>
                             <AccordionContent>
                                 <div className="flex flex-col gap-4 mt-5 flex-start">
-                                    <p className="text-start">
-                                        Our flagship product combines cutting-edge technology with sleek
-                                        design. Built with premium materials, it offers unparalleled
-                                        performance and reliability.
-                                    </p>
-                                    <p className="text-start">
-                                        Key features include advanced processing capabilities, and an
-                                        intuitive user interface designed for both beginners and experts.
-                                    </p>
+                                    <p className='text-start'>{item.description}</p>
                                 </div>
                             </AccordionContent>
                         </AccordionItem>  

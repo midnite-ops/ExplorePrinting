@@ -71,10 +71,9 @@ export default function Footer() {
                     <div className='hidden lg:block'>
                         <h2 className='text-white text-xl mb-6'>Quick Links</h2>
                         <ul className='text-gray flex flex-col gap-5 font-mont'>
-                            <a href="#" className="hover:text-gray-300">About Us</a>
-                            <a href="#" className="hover:text-gray-300">Portfolio</a>
-                            <a href="#" className="hover:text-gray-300">FAQ</a>
-                            <a href="#" className="hover:text-gray-300">Contact Us</a>
+                            <a href="#about-us" className="hover:text-gray-300">About Us</a>
+                            <a href="#portfolio" className="hover:text-gray-300">Portfolio</a>
+                            <a href="#faq" className="hover:text-gray-300">FAQ</a>
                         </ul>
                     </div>
                     <div className='w-[260px]'>
