@@ -32,6 +32,7 @@ import faceCap from '../assets/table/face-cap.svg';
 import printer1 from '../assets/table/printer-1.svg';
 import printer2 from '../assets/table/printer-2.svg';
 import flex from '../assets/table/flex.svg';
+import Counter from '@/hooks/counter';
 export default function Home() {
 
     const brandFeatures =  [
@@ -286,19 +287,32 @@ export default function Home() {
 
                 <div className='w-full lg:w-[70%] mt-13 justify-center gap-10 hidden lg:flex'>
                     <div className='flex flex-col items-center justify-center gap-2'>
-                        <h1 className='font-semibold lg:text-4xl text-2xl'>500+</h1>
+                        <div className='flex items-center gap-1'>
+                            <Counter target={500}/> 
+                            <p className='font-semibold lg:text-4xl text-2xl'>+</p>
+                        </div>
+                        
                         <p className='font-poppins text-sm lg:text-xl text-center'>Happy Clients</p>
                     </div>
                     <div className='flex flex-col items-center justify-center gap-2'>
-                        <h1 className='font-semibold text-4xl'>10k+</h1>
+                        <div className='flex items-center gap-1'>
+                            <Counter target={3}/> 
+                            <p className='font-semibold lg:text-4xl text-2xl'>k+</p>
+                        </div>
                         <p className='font-poppins text-xl text-center'>Projects Completed</p>
                     </div>
                     <div className='flex flex-col items-center justify-center gap-2'>
-                        <h1 className='font-semibold text-4xl'>99%</h1>
+                        <div className='flex items-center gap-1'>
+                            <Counter target={99}/> 
+                            <p className='font-semibold lg:text-4xl text-2xl'>%</p>
+                        </div>
                         <p className='font-poppins text-xl text-center'>Satisfaction Rate</p>
                     </div>
                     <div className='flex flex-col items-center justify-center gap-2'>
-                        <h1 className='font-semibold text-4xl'>15+</h1>
+                        <div className='flex items-center gap-1'>
+                            <Counter target={5}/> 
+                            <p className='font-semibold lg:text-4xl text-2xl'>+</p>
+                        </div>
                         <p className='font-poppins text-xl text-center'>Years of Experience</p>
                     </div>
                 </div>

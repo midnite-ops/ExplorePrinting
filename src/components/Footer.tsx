@@ -1,7 +1,6 @@
 import explorewhite from '../assets/explore-white-logo.svg';
 import instagram from '../assets/instagram-icon.svg';
 import facebook from '../assets/facebook-icon.svg';
-import twitter from '../assets/twitter-icon.svg';
 import phoneIcon from '../assets/phone-icon.svg';
 import locationIcon from '../assets/location-icon.svg';
 import mailIcon from '../assets/mail-icon.svg';
