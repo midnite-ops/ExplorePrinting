@@ -357,7 +357,7 @@ export default function Home() {
 
             <section id="FAQ" className="flex  flex-col justify-center section-spacing  space-y-20 px-2">
             
-                <h1 className='text-center text-4xl xl:text-5xl'>FAQ</h1>
+                <h1 className='font-poppins text-4xl xl:text-5xl font-medium text-center'>FAQ</h1>
                 <Accordion
                 type="single"
                 collapsible
