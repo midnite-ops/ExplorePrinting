@@ -198,7 +198,7 @@ export default function Home() {
             </section>
 
             <section id='about-us'>
-                <div className='bg-primaryBlue mx-0 lg:mx-25 section-spacing text-white text-xl py-12 px-5 lg:px-10 flex relative justify-between flex-col lg:flex-row items-center'>
+                <div className='bg-primaryBlue mx-0 lg:mx-25 section-spacing text-white text-xl py-12 px-5 lg:px-10 flex relative justify-between flex-col lg:flex-row items-center h-[1500px] md:h-auto'>
                     <div className='flex flex-col gap-10 lg:w-[701px]'>
                         <img src={exploreWhite} alt="explore logo" className='w-[150px]'/>
                         <p>
@@ -222,10 +222,10 @@ export default function Home() {
                             
                         </p>
                     </div>
-                    <div className='self-end mb-[200px] hidden lg:block'>
-                        <img src={exBlack} alt="explore acronym logo"/>
+                    <div className='self-end flex justify-center items-center w-full h-full md:mb-[200px]  md:w-auto'>
+                        <img src={exBlack} alt="explore acronym logo" className='w-[192px] md:w-auto'/>
                     </div>
-                    <img src={man} alt="a picture of a man" className='lg:absolute bottom-0 right-0 w-[200px] lg:w-auto -mb-12 md:mb-0 mt-5'/>
+                    <img src={man} alt="a picture of a man" className='absolute bottom-0 right-20 md:right-0 w-[200px] lg:w-auto md:mb-0 md:mt-5' loading='lazy'/>
                     
                 </div>
             </section>

@@ -114,13 +114,10 @@ export default function Footer() {
                             Your trusted partner for all printing needs. Quality, speed, and reliability in every project.
                         </p>
                         <div className='flex gap-5 mt-5'>
-                            <a href="">
+                            <a href="https://www.facebook.com/share/1A8EKei29u/" target='_blank'>
                                 <img src={facebook} alt="a facebook link" />
                             </a>
-                            <a href="">
-                                <img src={twitter} alt="a twitter link" />
-                            </a>
-                            <a href="">
+                            <a href="https://www.instagram.com/explore_printing_nigeria?igsh=anNiajh6M2x4c2x6" target='_blank'>
                                 <img src={instagram} alt="an instagram logo embedded with a link" />
                             </a>
                         </div>
