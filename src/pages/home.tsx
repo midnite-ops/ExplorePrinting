@@ -33,7 +33,6 @@ import printer1 from '../assets/table/printer-1.svg';
 import printer2 from '../assets/table/printer-2.svg';
 import flex from '../assets/table/flex.svg';
 import Counter from '@/hooks/counter';
-import { Description } from '@radix-ui/react-dialog';
 export default function Home() {
 
     const brandFeatures =  [
