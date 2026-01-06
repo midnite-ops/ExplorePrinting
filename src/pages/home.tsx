@@ -250,10 +250,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='bg-[#FFCCCC] px-5 lg:px-24 py-16 pb-5 flex jusify-center items-center flex-col gap-10 relative mb-[100px] overflow-hidden z-10'>
-                <h1 className='text-center text-3xl font-normal z-20'>What we bring to the table</h1>
-                <div className='bg-white py-8 lg:py-[90px] px-5 shadow-x z-10 md:z-0'>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-10 gap-x-5 ">
+            <section className='bg-[#FFCCCC] px-5 lg:px-24 py-16 pb-5 flex justify-center items-center flex-col gap-10 relative mb-[100px] overflow-hidden '>
+                <h1 className='text-center text-3xl font-normal relative z-20'>What we bring to the table</h1>
+                <div className='bg-white py-8 lg:py-[90px] px-5 shadow-x z-10  md:z-0'>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  relative gap-4 gap-y-10 gap-x-5 z-10">
                         {
                            brandFeatures.map((item, index) => (
                             index === 2 ? (
@@ -261,7 +261,7 @@ export default function Home() {
                                     {/* Empty space */}
                                 </div>
                             ) : (                               
-                                <div key={index} className="p-5 border border-[#FF400A] rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+                                <div key={index} className="p-5 border border-[#FF400A] rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 relative bg-white">
                                     <img src={item.img} alt={item.title} className='absolute -top-7 right-10 w-[60px] h-[50px] md:w-auto md:h-auto z-10 bg-white'/>
                                     <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
                                     <p className="text-gray-700 text-sm mb-5">{item.desc[0]}</p>
@@ -272,10 +272,11 @@ export default function Home() {
 
                         {/* Empty space */}
                     </div>
+                    <div className='absolute -z-0 -top-3  md:-top-3 -right-30 md:right-25 '>
+                        <img src={bag} alt="bag" className=' w-[300px] lg:w-full' />
+                    </div>
                 </div>
-                <div className='absolute z-0 -top-3  md:-top-3 -right-30 md:right-25 '>
-                    <img src={bag} alt="bag" className=' w-[300px] lg:w-full' />
-                </div>
+                
             </section>
 
 
