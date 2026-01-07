@@ -2,7 +2,9 @@ import exploreLogo from '../assets/explore-logo.svg';
 import cloud from '../assets/brands/cloud.svg';
 import victa from '../assets/brands/victa.svg';
 import aws from '../assets/brands/aws.svg';
-import citi from '../assets/brands/citi.svg';
+import infinite from '../assets/brands/IN3.svg';
+import fpl from '../assets/brands/IN1.svg'; 
+import mtn from '../assets/brands/IN2.svg';
 import fidelity from '../assets/brands/fidelity.svg';
 import tsa from '../assets/brands/tsa.svg';
 import xpress from '../assets/brands/xpress.svg';
@@ -14,9 +16,9 @@ import man from '../assets/MY PIC  1.svg';
 import Footer from '../components/Footer';
 import Portfolio from '../components/Portfolio';
 import bag from '../assets/BAG (1) 1.svg';
-import michaelPic from '../assets/Micheal.svg';
-import sarahPic from '../assets/Sarah.svg';
-import davidPic from '../assets/David.svg';
+import pic1 from '../assets/pic1.svg';
+import pic2 from '../assets/pic2.svg';
+import pic3 from '../assets/pic3.svg';
 import starRating from '../assets/star-rating.svg';
 import printingProcessImg from '../assets/printing-process.svg';
 import HeroTicker from '../components/HeroTicker';
@@ -109,22 +111,22 @@ export default function Home() {
     ]
     const reviews = [
         {
-            name: 'Micheal Chan',
-            img: michaelPic,
-            role: 'Marketing Director, Techstart',
-            desc: '"PrintCraft delivered exceptional quality for our trade show banners. The colors were vibrant, the material was durable, and the turnaround time was impressive. Highly recommended!"'
+            name: 'Laura Tin Moe Aung',
+            img: pic1,
+            role: 'TSA Hotel Supply',
+            desc: '“We absolutely love the stickers you made for us! Clean prints, vibrant colors, and great attention to detail. Thank you for an amazing job.”'
         },
         {
-            name: 'Sarah Johnson',
-            img: sarahPic,
-            role: 'Author & Publisher',
-            desc: '"The book printing quality exceeded my expectations. The binding is perfect, colors are accurate, and the customer service team was incredibly helpful throughout the process."'
+            name: 'Nicole Horsfall',
+            img: pic2,
+            role: 'CEO - Infinte gestures',
+            desc: '"I’m impressed by how neat their work is. Thank you for the quality work over the years."'
         },
         {
-            name: 'David Rodriguez',
-            img: davidPic,
-            role: 'Restaurant Owner',
-            desc: '"From menu designs to promotional flyers, PrintCraft has been our go-to printing partner. Their attention to detail and competitive pricing make them unbeatable."'
+            name: 'Yusuf Usman',
+            img: pic3,
+            role: 'Visibility - Techive',
+            desc: '"Printing with Explore Printing is very seamless. I can’t remeber the last time I had to run after a vendor to deliver. Thank you and God bless you."'
         }
     ]
 
@@ -154,7 +156,7 @@ export default function Home() {
         { name: 'Contact', href: '#contact' },
     ]
 
-    const brands:string[] = [fidelity, century, tsa, gionee, citi, xpress, aws, cloud, victa,];
+    const brands:string[] = [fidelity, century, tsa, gionee, xpress, aws, cloud, victa, mtn, infinite, fpl];
   return (
     <>
         <main>
@@ -272,9 +274,12 @@ export default function Home() {
 
                         {/* Empty space */}
                     </div>
-                    <div className='absolute -z-0 -top-3  md:-top-3 -right-30 md:right-25 '>
-                        <img src={bag} alt="bag" className=' w-[300px] lg:w-full' />
+                    <div className='absolute -z-0 -top-3  md:-top-3 -right-30 md:right-25 hidden md:block'>
+                        <img src={bag} alt="bag" className=' w-[300px] lg:w-full h-[450px]' />
                     </div>
+                </div>
+                <div className='absolute z-0 -top-10  md:-top-3 -right-30 md:right-25 md:hidden'>
+                    <img src={bag} alt="bag" className=' w-[300px] lg:w-full h-[450px] md:hidden' />
                 </div>
                 
             </section>
@@ -287,9 +292,9 @@ export default function Home() {
                         Don't just take our word for it - hear from satisfied customers across industries.
                     </p>
                 </div>
-                <div className='flex gap-5 flex-wrap lg:flex-nowrap'>
+                <div className='flex gap-5 flex-wrap justify-center md:justify-self-auto lg:flex-nowrap'>
                     {reviews.map((review, index) => (
-                        <div key={index} className='bg-gray-100 p-8 mt-10 rounded-lg shadow-md'>
+                        <div key={index} className='bg-gray-100 w-[400px] p-8 mt-10 rounded-lg shadow-md'>
                             <div className='flex gap-5 mb-8'>
                                 <img src={review.img} alt={review.name} className='w-16 h-16 rounded-full mb-4'/>
                                 <div >
