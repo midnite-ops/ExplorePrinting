@@ -35,6 +35,7 @@ import printer1 from '../assets/table/printer-1.svg';
 import printer2 from '../assets/table/printer-2.svg';
 import flex from '../assets/table/flex.svg';
 import Counter from '@/hooks/counter';
+import whatsapp from '../assets/whatsapp-icon.png';
 export default function Home() {
 
     const brandFeatures =  [
@@ -158,7 +159,10 @@ export default function Home() {
 
     const brands:string[] = [fidelity, century, tsa, gionee, xpress, aws, cloud, victa, mtn, infinite, fpl];
   return (
-    <>
+    <section className='relative'>
+        <a href="https://wa.me/2348163137546" target='_blank' className='bottom-5 right-5 fixed cursor-pointer z-50 '>
+            <img src={whatsapp} alt="whatsapp icon" className='w-20 '/>
+        </a>
         <main>
             <section id="Hero" className="lg:pt-11 pt-7 h-min mb-[100px]">
                 <header className='flex flex-wrap justify-between items-center mb-6 lg:mb-10 section-spacing '>
@@ -402,7 +406,7 @@ export default function Home() {
             </section>
         </main>
         <Footer />
-    </>
+    </section>
     
   )
 }
