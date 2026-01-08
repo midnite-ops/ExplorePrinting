@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
 import { ImageGrid } from "./ImageGrid";
 import { AnimatePresence, motion } from "framer-motion";
 import ImageViewer from "./ImageViewer";
