@@ -22,7 +22,7 @@ html{
       transform: translateX(calc(-50% - 20px));
     }
   }
-  --animate-infinite-scroll-left: infinite-scroll-left 10s linear infinite;
+  --animate-infinite-scroll-left: infinite-scroll-left 20s linear infinite;
 }
 @layer base{
   h1{

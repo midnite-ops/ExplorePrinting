@@ -209,19 +209,25 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id='trusted-brands' className='mb-[100px] '>
-                <div className='mb-12'>
-                    <h1 className='text-3xl font-semibold text-center'>Trusted By</h1>
+            <section id="trusted-brands" className="mb-[100px]">
+                <div className="mb-12">
+                    <h1 className="text-3xl font-semibold text-center">Trusted By</h1>
                 </div>
-                <div className='overflow-hidden flex gap-[50px]'>
-                    <div className='flex animate-infinite-scroll-left'>
+
+                <div className="overflow-hidden">
+                    <div className="flex w-max animate-infinite-scroll-left">
                         {[...brands, ...brands].map((brand, index) => (
-                            <img src={brand} alt="brand logo" key={index} className='h-12 object-contain mx-10'/>
+                        <img
+                            key={index}
+                            src={brand}
+                            alt="brand logo"
+                            className="h-12 object-contain mx-10 flex-shrink-0"
+                        />
                         ))}
                     </div>
-                    
                 </div>
             </section>
+
 
             <section id='about-us'>
                 <div className='bg-primaryBlue mx-0 lg:mx-25 section-spacing text-white text-xl py-12 px-5 lg:px-10 flex relative justify-between flex-col lg:flex-row items-center h-[1600px] md:h-auto'>
@@ -296,7 +302,7 @@ export default function Home() {
                         Don't just take our word for it - hear from satisfied customers across industries.
                     </p>
                 </div>
-                <div className='flex gap-5 flex-wrap justify-center md:justify-self-auto lg:flex-nowrap'>
+                <div className='flex gap-5 flex-wrap justify-center md:justify-self-auto lg:flex-nowrap w-full'>
                     {reviews.map((review, index) => (
                         <div key={index} className='bg-gray-100 w-[400px] p-8 mt-10 rounded-lg shadow-md'>
                             <div className='flex gap-5 mb-8'>
@@ -314,7 +320,7 @@ export default function Home() {
                     ))}
                 </div>
 
-                <div className='w-full lg:w-[70%] mt-13 justify-center gap-10 hidden lg:flex'>
+                <div className='w-full lg:w-[70%] mt-13 justify-center lg:flex-row flex-col flex items-center space-y-10 md:space-y-0 gap-10'>
                     <div className='flex flex-col items-center justify-center gap-2'>
                         <div className='flex items-center gap-1'>
                             <Counter target={500}/> 

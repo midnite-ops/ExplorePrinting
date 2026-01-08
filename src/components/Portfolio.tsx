@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { ImageGrid } from "./ImageGrid";
 import { AnimatePresence, motion } from "framer-motion";
+import ImageViewer from "./ImageViewer";
 
 type ImageModule = { default: string };
 
@@ -78,27 +79,10 @@ export default function Portfolio() {
             exit={{ opacity: 0 }}
             onClick={() => setActiveImage(null)}
           >
-            {/* Close button */}
-            <button
-              onClick={() => setActiveImage(null)}
-              className="absolute top-4 right-4 z-60 text-white p-2 rounded-full 
-                        hover:bg-white/10 transition focus:outline-none"
-            >
-              <X className="w-6 h-6 md:w-7 md:h-7" />
-            </button>
-
-            {/* Image */}
-            <div className="w-full h-full flex items-center justify-center">
-              <motion.img
-                src={activeImage}
-                className="max-w-[90vw] max-h-[90vh] object-contain"
-                initial={{ scale: 0.95 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.95 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-                onClick={(e) => e.stopPropagation()}
-              />
-            </div>
+            <ImageViewer
+              src={activeImage}
+              onClose={() => setActiveImage(null)}
+            />
           </motion.div>
         )}
       </AnimatePresence>
