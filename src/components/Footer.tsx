@@ -119,7 +119,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="mt-8 text-center text-[18px] font-light">
-                    @ {new Date().getFullYear()} Explore-Printing. All rights reserved. | Privacy Policy | Terms of Service
+                    @ 2022 Explore-Printing. All rights reserved. | Privacy Policy | Terms of Service
                 </div>
             </div>
         </footer>
