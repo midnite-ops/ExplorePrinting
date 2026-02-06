@@ -1,9 +1,9 @@
-
+import vector2 from '../assets/Vector-2.svg';
+import vector from '../assets/Vector.svg';
 function Page404() {
   return (
     <div className=" w-full h-screen flex justify-center place-items-center bg-white">
-      {/* A div element with the class of absolute. It serves as a vector element for the 404 Page */}
-      {/* <div>
+      <div>
         <div className="absolute right-0  -bottom-10 -z-10">
           <img src={vector} alt="a blue vector element"/>
         </div>
@@ -16,13 +16,10 @@ function Page404() {
         </div>
 
         <div className="flex flex-col items-center gap-10 mt-8 text-center ">
-          <p className="w-[90%] md:w-[w-70%] gray-text"> The page you are looking for is under development. Come back in a few weeks to get more out of <span className='font-bold'>ExplorePrinting</span></p> */}
-          {/* <div className="flex gap-6">
-            <button className="btn bg-blue-500">GO BACK </button>
-            <button className="btn border border-blue-500 text-blue-500">HOMEPAGE</button>
-          </div> */}
-        {/* </div>
-      </div> */}
+          <p className="w-[90%] md:w-[w-70%] gray-text"> The page you are looking for is under development. Come back in a few weeks to get more out of <span className='font-bold'>ExplorePrinting</span></p>
+          
+        </div>
+      </div>
       
         
     </div>
