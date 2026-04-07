@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Home from './pages/home'
+import Home from './pages/home'
 import Page404 from './pages/page404';
 import Layout from "./layout";
 import "./index.css";
@@ -10,7 +10,7 @@ function App() {
       <Layout>
         <Routes>
             <Route path="*" element={<Page404 />} /> 
-            {/* <Route path="/" element={<Home/>} /> */}
+            <Route path="/" element={<Home/>} />
             {/* <Route path="/about" element={<About />} /> */}
           </Routes>
       </Layout>
