@@ -1,9 +1,9 @@
-// import vector2 from '../assets/Vector-2.svg';
-// import vector from '../assets/Vector.svg';
+import vector2 from '../assets/Vector-2.svg';
+import vector from '../assets/Vector.svg';
 function Page404() {
   return (
     <div className=" w-full h-screen flex justify-center place-items-center bg-white">
-      {/* <div>
+      <div>
         <div className="absolute right-0  -bottom-10 -z-10">
           <img src={vector} alt="a blue vector element"/>
         </div>
@@ -16,10 +16,10 @@ function Page404() {
         </div>
 
         <div className="flex flex-col items-center gap-10 mt-8 text-center ">
-          <p className="w-[90%] md:w-[w-70%] gray-text"> The page you are looking for is under development. Come back in a few weeks to get more out of <span className='font-bold'>ExplorePrinting</span></p>
+          <p className="w-[90%] md:w-[w-70%] gray-text"> The page you are looking for is not available. Contact your developer to fix any issues.</p>
           
         </div>
-      </div> */}
+      </div>
       
         
     </div>
